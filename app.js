@@ -80,15 +80,26 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 let testArray = [2, 3, 4]; //eslint-disable-line
+// 5+3+4=>12 => 9
+// 16 =>12
 
 function sumArray(sumArr) {
   //eslint-disable-line
-  let sum1= sum(testArray[0], testArray[1])[0];
-  // console.log(sum1);
-  let sum2= sum(sum1, testArray[2])[0];
+  let sum2=0;
+  for ( let i=0; i<sumArr.length; i++){
+    sum2 = sum( sumArr[i], sum2)[0];
+   }
   // console.log(sum2);
-  return [sum2, `${testArray[0]},${testArray[1]},${testArray[2]} was passed in as an array of numbers, and ${sum2} is their sum.`]
+  return[sum2, `${testArray[0]},${testArray[1]},${testArray[2]} was passed in as an array of numbers, and ${sum2} is their sum.`]
+  
+  
+  
+  
+  
 }
+
+// }
+// sumArray();
 // console.log(sumArray(testArray));
 // Here is the test for sumArray(); uncomment it to run it
 
@@ -139,11 +150,17 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 let testDynamicArray = [1, 2, 3, 4, 5]; //eslint-disable-line
-
+let output2=1;
 function multiplyAnyArray(dynamicArray) {
   //eslint-disable-line
+  for(let i=0; i < testDynamicArray.length; i++){
+    output2= multiply(output2, testDynamicArray[i])[0];
+  }
+  // console.log(output);
+  return[output2, `The numbers ${testDynamicArray[0]}, ${testDynamicArray[1]}, ${testDynamicArray[2]}, ${testDynamicArray[3]}, ${testDynamicArray[4]} have a product of ${output2}.`]
 }
-
+console.log();
+// console.log(multiplyAnyArray(testDynamicArray));
 // Here is the test for multiplyArray(); uncomment it to run it
 // testMultiplyAnyArray(testDynamicArray);
 
